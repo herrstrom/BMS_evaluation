@@ -1,0 +1,164 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://www.plcopen.org/xml/tc6_0200">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-11-30T21:48:27.0206928" />
+  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-11-30T21:47:24.6425531">
+    <coordinateInfo>
+      <fbd>
+        <scaling x="1" y="1" />
+      </fbd>
+      <ld>
+        <scaling x="1" y="1" />
+      </ld>
+      <sfc>
+        <scaling x="1" y="1" />
+      </sfc>
+    </coordinateInfo>
+    <addData>
+      <data name="http://www.3s-software.com/plcopenxml/projectinformation" handleUnknown="implementation">
+        <ProjectInformation>
+          <property name="Project" type="string">BE_Framework BA</property>
+        </ProjectInformation>
+      </data>
+    </addData>
+  </contentHeader>
+  <types>
+    <dataTypes />
+    <pous>
+      <pou name="LB01_FF1_Analog_ST" pouType="program">
+        <interface>
+          <localVars>
+            <variable name="local">
+              <type>
+                <derived name="strFan_Analog" />
+              </type>
+            </variable>
+            <variable name="localGP">
+              <type>
+                <derived name="strSensor2_Regulator" />
+              </type>
+            </variable>
+            <variable name="ControlFan">
+              <type>
+                <derived name="_BE_Fan" />
+              </type>
+            </variable>
+            <variable name="FbRegulator">
+              <type>
+                <derived name="_BE_Regulator" />
+              </type>
+            </variable>
+            <variable name="_BE_Fan2">
+              <type>
+                <derived name="_BE_Fan_2" />
+              </type>
+            </variable>
+            <variable name="reset_en">
+              <type>
+                <derived name="RS" />
+              </type>
+            </variable>
+            <variable name="AlarmFbAl01">
+              <type>
+                <derived name="_BE_AlarmAckRequired" />
+              </type>
+            </variable>
+            <variable name="AlarmFbAl02">
+              <type>
+                <derived name="_BE_AlarmAckRequired" />
+              </type>
+            </variable>
+            <variable name="fb_OperationalTime">
+              <type>
+                <derived name="_BE_OperationalTime" />
+              </type>
+            </variable>
+            <variable name="ackAl01">
+              <type>
+                <BOOL />
+              </type>
+            </variable>
+            <variable name="ackAl02">
+              <type>
+                <BOOL />
+              </type>
+            </variable>
+            <variable name="fanGuardOk">
+              <type>
+                <BOOL />
+              </type>
+            </variable>
+          </localVars>
+        </interface>
+        <body>
+          <ST>
+            <xhtml xmlns="http://www.w3.org/1999/xhtml">//Struct -&gt;&gt; local
+LB01.FF1 := local;
+LB01.GP21 := localGP;
+LB01.GP23.V := fanGuardOk;
+
+//Fan
+
+//Alarm
+
+//Regulator
+
+//Operational time
+fb_OperationalTime(Operating := local.CMD, MinutePulse := SYS_MinutePulse, ResetOperatingTime := local.RST, ResetStarts := local.RST);
+local.PV2 := fb_OperationalTime.TotalMinutes;
+local.PV1 := fb_OperationalTime.TotalHours;
+local.PV3 := fb_OperationalTime.StartsTotal;
+
+//Local --&gt; STRUCT
+local := LB01.FF1;
+localGP := LB01.GP21;
+
+</xhtml>
+          </ST>
+        </body>
+        <addData>
+          <data name="http://www.3s-software.com/plcopenxml/interfaceasplaintext" handleUnknown="implementation">
+            <InterfaceAsPlainText>
+              <xhtml xmlns="http://www.w3.org/1999/xhtml">PROGRAM LB01_FF1_Analog_ST
+VAR
+	local:strFan_Analog;
+	localGP:strSensor2_Regulator;
+	ControlFan: _BE_Fan;
+	FbRegulator: _BE_Regulator;
+	_BE_Fan2: _BE_Fan_2;
+	reset_en: RS;
+	AlarmFbAl01: _BE_AlarmAckRequired;
+	AlarmFbAl02: _BE_AlarmAckRequired;
+	fb_OperationalTime: _BE_OperationalTime;
+	ackAl01: BOOL;
+	ackAl02: BOOL;
+	fanGuardOk: BOOL;
+END_VAR
+</xhtml>
+            </InterfaceAsPlainText>
+          </data>
+          <data name="http://www.3s-software.com/plcopenxml/objectid" handleUnknown="discard">
+            <ObjectId>b9ac756f-c955-4d04-a016-9eab32a5b28c</ObjectId>
+          </data>
+        </addData>
+      </pou>
+    </pous>
+  </types>
+  <instances>
+    <configurations />
+  </instances>
+  <addData>
+    <data name="http://www.3s-software.com/plcopenxml/projectstructure" handleUnknown="discard">
+      <ProjectStructure>
+        <Folder Name="B001">
+          <Folder Name="LB01">
+            <Folder Name="Fan">
+              <Folder Name="FF1">
+                <Object Name="LB01_FF1_Analog_ST" ObjectId="b9ac756f-c955-4d04-a016-9eab32a5b28c" />
+              </Folder>
+            </Folder>
+          </Folder>
+        </Folder>
+      </ProjectStructure>
+    </data>
+  </addData>
+</project>
