@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-11-30T21:51:35.8435922" />
-  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-11-30T21:49:12.8325621">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-11-30T22:01:10.149683" />
+  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-11-30T22:00:52.5249251">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -57,7 +57,7 @@
                 <derived name="RS" />
               </type>
             </variable>
-            <variable name="AlarmFbAl01">
+            <variable name="AlarmFbAl03">
               <type>
                 <derived name="_BE_AlarmAckRequired" />
               </type>
@@ -126,7 +126,7 @@ VAR
 	FbRegulator: _BE_Regulator;
 	_BE_Fan2: _BE_Fan_2;
 	reset_en: RS;
-	AlarmFbAl01: _BE_AlarmAckRequired;
+	AlarmFbAl03: _BE_AlarmAckRequired;
 	AlarmFbAl02: _BE_AlarmAckRequired;
 	fb_OperationalTime: _BE_OperationalTime;
 	ackAl01: BOOL;
