@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-05T10:07:49.9519806" />
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-05T10:09:34.2294562" />
   <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-05T10:07:38.4190487">
     <coordinateInfo>
       <fbd>
@@ -3278,7 +3278,7 @@
                   <connectionPointOut>
                     <expression />
                   </connectionPointOut>
-                  <expression>local.SP4</expression>
+                  <expression>local.SP5</expression>
                   <addData>
                     <data name="http://www.3s-software.com/plcopenxml/cfcpageinfo" handleUnknown="implementation">
                       <pageInfo pageId="1" pageArea="contentLeft" xmlns="" />
@@ -3288,7 +3288,7 @@
                 <connector localId="258" name="">
                   <position x="-6" y="-1" />
                   <connectionPointIn>
-                    <connection refLocalId="259" formalParameter="local.SP4" />
+                    <connection refLocalId="259" formalParameter="local.SP5" />
                   </connectionPointIn>
                 </connector>
                 <inVariable localId="261">
