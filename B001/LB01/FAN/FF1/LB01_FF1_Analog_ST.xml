@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-11T10:12:13.7017258" />
-  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-11T10:09:47.9771262">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-11T10:38:16.0004111" />
+  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-11T10:38:01.3263314">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -93,7 +93,7 @@
           <ST>
             <xhtml xmlns="http://www.w3.org/1999/xhtml">//Struct -&gt;&gt; local
 LB01.FF1 := local;
-LB01.GP22 := localGP;
+LB01.GP21 := localGP;
 LB01.GP23.V := fanGuardOk;
 
 //Fan
