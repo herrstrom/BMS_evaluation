@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-11T10:38:16.0004111" />
-  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-11T10:38:01.3263314">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-11T10:40:30.9359274" />
+  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-11T10:40:05.556501">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -97,6 +97,17 @@ LB01.GP21 := localGP;
 LB01.GP23.V := fanGuardOk;
 
 //Fan
+IF Local.SP2 &gt; 0 THEN
+	local.EnFeedbackError := TRUE;
+END_IF
+
+IF Local.SP1 &gt; 0 THEN
+	local.EnThermalError := TRUE;
+END_IF
+
+IF Local.SP3 &gt; 0 THEN
+	local.EnFanGuardError := TRUE;
+END_IF
 
 //Alarm
 
