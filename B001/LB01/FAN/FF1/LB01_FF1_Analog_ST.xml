@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <project xmlns="http://www.plcopen.org/xml/tc6_0200">
-  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-11T10:40:30.9359274" />
-  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-11T10:40:05.556501">
+  <fileHeader companyName="" productName="CODESYS" productVersion="CODESYS V3.5 SP13 Patch 2" creationDateTime="2018-12-11T10:53:37.6353381" />
+  <contentHeader name="BE_Framework BA.project" modificationDateTime="2018-12-11T10:53:25.2884718">
     <coordinateInfo>
       <fbd>
         <scaling x="1" y="1" />
@@ -108,6 +108,31 @@ END_IF
 IF Local.SP3 &gt; 0 THEN
 	local.EnFanGuardError := TRUE;
 END_IF
+
+_BE_Fan2.AutoStart := LB01.GeneralStart;
+_BE_Fan2.AutoStartTimeDelay := local.SP1 + 5; 
+_BE_Fan2.BlockAutoStart := FALSE;
+_BE_Fan2.RunIndication := local.V; 
+_BE_Fan2.EnableFeedbackAlarm := local.EnFeedbackError; 
+_BE_Fan2.FeedbackAlarmTimeDelay := local.SP4; 
+_BE_Fan2.EnableThermicRelayAlarm := local.EnThermalError;
+_BE_Fan2.ThermicRelayOk := local.ThermoRelay1;
+_BE_Fan2.ThermicRelayAlarmTimeDelay := local.SP2;
+_BE_Fan2.EnableFanGuardAlarm := local.EnFanGuardError;
+_BE_Fan2.FanGuardOk := fanGuardOk;
+_BE_Fan2.FanGuardAlarmTimeDelay := local.SP3;
+_BE_Fan2.AlarmIndication := local.AL;
+_BE_Fan2.AutoReg := local.AUT;
+
+_BE_Fan2();
+
+local.CMD := _BE_Fan2.StartSignalOutput; 
+// _BE_Fan2.Status 
+local.FeedbackError := _BE_Fan2.FeedbackAlarm;
+local.ThermalError := _BE_Fan2.ThermicRelayAlarm;
+local.FanGuardError := _BE_Fan2.FanGuardAlarm;
+
+ 
 
 //Alarm
 
